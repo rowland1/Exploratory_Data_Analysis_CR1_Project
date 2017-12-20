@@ -8,9 +8,11 @@ epc_data <- read.csv("./household_power_consumption.txt", header = T, sep = ';',
 #format dates#
 epc_data$NewDate <- strptime(as.character(epc_data$Date), "%d/%m/%Y")
 epc_data$NewDate <- as.Date(epc_data$NewDate, format = "%d/%m/%Y")
+epc_data$Datetime <- strptime(paste(epc_data$Date, epc_data$Time), "%d/%m/%Y %H:%M:%S")
+
 
 #subset data#
-epc_datasubset <- subset(epc_data, subset = (epc_data$NewDate >= "2007-02-01" & Date <= "2007-02-02"))
+epc_datasubset <- subset(epc_data, subset = (epc_data$NewDate >= "2007-02-01" & epc_data$NewDate <= "2007-02-02"))
 
 #Plot 1#
 
