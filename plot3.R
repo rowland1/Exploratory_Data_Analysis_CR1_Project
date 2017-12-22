@@ -21,7 +21,6 @@ lines(epc_datasubset$Datetime, epc_datasubset$Sub_metering_1, col = "black")
 lines(epc_datasubset$Datetime, epc_datasubset$Sub_metering_2, col = "red")
 lines(epc_datasubset$Datetime, epc_datasubset$Sub_metering_3, col = "blue")
 legend("topright", col = c("black", "red", "blue"), c("Sub-Metering 1", "Sub-Metering 2", "Sub-Metering 3"), lwd = 1)
-axis(side = 1, at = c(1, 1441, 2880), labels = c("Thur", "Fri", "Sat"))
 
 #Save .png#
 
